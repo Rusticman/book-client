@@ -17,19 +17,19 @@ const deleteGotTag = (e) => {
   deleteApprovedBooks(false,index);
 }
 
-const giveToRequesterList = booksGivenAway.map((elem, i) => {
+if(booksGivenAway.length > 0 || booksIGot.length > 0){
+  const giveToRequesterList = booksGivenAway.map((elem, i) => {
 
-  return(
-    <div key={i+ "booksToGive"} className="booksGivenAwayTags">
-    <b>Book</b>:{elem.title}<br/>
-    <b>Requester:</b>{elem.requesterName}<br/>
-    <b>Email address:</b>{elem.requesterEmail}<br/>
-    <b>Location:</b>{elem.requesterLocation}<br/>
+    return(
+      <div key={i+ "booksToGive"} className="booksGivenAwayTags">
+      <b>Book</b>:{elem.title}<br/>
+      <b>Requester:</b>{elem.requesterName}<br/>
+      <b>Email address:</b>{elem.requesterEmail}<br/>
+      <b>Location:</b>{elem.requesterLocation}<br/>
       <button onClick={deleteGivenTag} className={i+" deleteBooksGivenButton"}>delete</button>
-    </div>
-  )
-})
-
+      </div>
+    )
+  })
 const receiveFromOwnerList = booksIGot.map((elem, i) => {
 
   return(
@@ -47,7 +47,7 @@ const receiveFromOwnerList = booksIGot.map((elem, i) => {
     <div id="tradeBooksContainer">
 <div>Books to be traded:</div>
 <div id="giveToRequesterWrapper">
-  <div  className="profileTitles">Get in contact with the book requester:</div>
+  <div  className="profileTitles">Get in contact with the book's requester:</div>
 {giveToRequesterList}
 </div>
 <div id="getFromOwnerWrapper">
@@ -57,6 +57,9 @@ const receiveFromOwnerList = booksIGot.map((elem, i) => {
 
     </div>
   )
+} else{
+  return <div></div>
+}
 }
 
 export default TradeBooks;

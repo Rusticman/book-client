@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import config from '../../config';
 
 
  class App extends Component {

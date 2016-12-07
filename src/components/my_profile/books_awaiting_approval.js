@@ -45,7 +45,7 @@ const BooksAwaitingApproval = (props) => {
             </div>
   }
   else{
-    return <div id="bookApprovalContainer">awaiting data</div>
+    return <div></div>
   }
 
 }

@@ -234,7 +234,6 @@ html,body,#root{
 /*my profile start */
 
 #myProfileContainer{
-  overflow:auto;
   margin-bottom: 5px;
   position:relative;
 }
@@ -662,6 +661,7 @@ blueb #35A0FF
 .footer {
   position:relative;
   background:#e2871b;
+  clear:both;
 }
 
 .footer > span{

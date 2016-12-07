@@ -51,15 +51,17 @@ const elementData = allBooks[index];
   }
 
   const data = allBooks.map((elem,i) => {
-    const thumbNail = {
-      backgroundImage:'url(' + elem.thumbnail + ')'
-    }
-    if(signedUp){
-      return(
-        <div key={elem.title + i} className={i +" bookWrapper"} onMouseEnter={mouseEnterEvent} style={thumbNail}>
-        <div onClick={addBookToProfile} className=" requestImgWrapper"><img src="../../style/img/white-arrows.png" className={i +" requestImg"} /></div>
-        </div>
-      )
+    const id = sessionStorage.getItem('id');//stops displaying owner's books in allbooks
+    if(elem.owner !== id){
+      const thumbNail = {
+        backgroundImage:'url(' + elem.thumbnail + ')'
+      }
+      if(signedUp){
+        return(
+          <div key={elem.title + i} className={i +" bookWrapper"} onMouseEnter={mouseEnterEvent} style={thumbNail}>
+          <div onClick={addBookToProfile} className=" requestImgWrapper"><img src="../../style/img/white-arrows.png" className={i +" requestImg"} /></div>
+          </div>
+        )
       }
       else{
         return(
@@ -67,6 +69,7 @@ const elementData = allBooks[index];
           </div>
         )
       }
+    }
 
   })
 

@@ -33,7 +33,7 @@ return(
 )
 }
 else{
-  return <div>awaiting books</div>
+  return <div></div>
 }
 }
 

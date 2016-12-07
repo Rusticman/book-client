@@ -9,23 +9,28 @@ const removeBook = (e) => {
   deleteBookIOwn(index);
 }
 
-const myBooksList = myBooks.map((elem,i) => {
+if(myBooks.length > 0 ){
+  const myBooksList = myBooks.map((elem,i) => {
 
-  return(
-    <div key={i + 'mybooks'}  className="myBookTags">
+    return(
+      <div key={i + 'mybooks'}  className="myBookTags">
       <div onClick={removeBook} className={i}>delete</div>
       <div>{elem.title}</div>
       <div><i>by {elem.authors[0]}</i></div>
-    </div>
-  )
-})
+      </div>
+    )
+  })
 
-return(
+  return(
     <div id="booksOwnedContainer">
     <div className="profileTitles">My books:</div>
-      {myBooksList}
+    {myBooksList}
     </div>
-)
+  )
+} else{
+  return <div > </div>
+}
+
 
 }
 
