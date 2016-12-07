@@ -96,7 +96,7 @@ const elementData = allBooks[index];
   )
 }
 else{
-  return <div>awaiting books</div>
+  return <div id="awaitBooksMessage">Please wait a moment as the server loads up...</div>
 }
 
 

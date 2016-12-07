@@ -32,7 +32,7 @@ const {auth} = this.props;
       <div id="header">
         <img className="bookLogo" src="../../style/img/blue-book.png" alt="book-logo" />
         <div id="bookAddedConfirmation" className={confirmationOpacity}>This book has been added to your profile.</div>
-        <div id="signUpMessage" className={signedUpMessageOpacity}>Go to your profile page to update your account<br/> before selecting books you'd like to exchange.</div>
+        <div id="signUpMessage" className={signedUpMessageOpacity}>Go to your profile page to update your account before selecting<br/> books you'd like to exchange.</div>
         <div id="headerLinkContainer">
           {this.renderLinks()}
         </div>
