@@ -12,17 +12,16 @@ import config from '../../config';
     const options = {
       allowedConnections: ['twitter', 'facebook'],
       auth: {
-         redirectUrl: 'http://localhost:8080/allbooks',
+         redirectUrl: 'https://book-trade-rustic.herokuapp.com/allbooks',
          responseType: 'token'
     }
     }
 
-  //  process.env.AUTH0_ID,
-    //process.env.AUTH0_DOMAIN,
+  
 
     const lock = new Auth0Lock(
-    config.auth0_id,
-    config.auth0_domain,
+      process.env.AUTH0_ID,
+      process.env.AUTH0_DOMAIN,
       options
     );
     this.lock = lock;
