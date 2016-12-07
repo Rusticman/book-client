@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo');
+
+
+/*
+light blueb #3A96E8
+dark blueb #027CE8
+blueb #35A0FF
+*/
+* {
+margin: 0;
+padding:0;
+border:0;
+}
+
+html,body, #root, #app{
+  height:100%;
+}
+
+html,body,#root{
+  font-family: 'Arimo', sans-serif;
+}
+
+/*header start */
+
+.bookLogo{
+  width:53px;
+  float:left;
+  margin:5px 0 5px 5px;
+}
+
+#header{
+  overflow:auto;
+  background:#e2871b;
+  min-height: 75px;
+  position:relative;
+}
+
+#bookAddedConfirmation, #signUpMessage{
+  position:absolute;
+  top: 40%;
+  left:20%;
+  z-index:1;
+  background:#027ce8;
+  color:white;
+  border: 2px solid #A1B1BA;
+  transition: all 1s ease;
+  line-height: normal;
+  padding:2px;
+  font-size: 0.8em;
+}
+
+
+
+.showSignedUpMessage{
+  opacity:1;
+}
+
+.hideSignedUpMessage{
+  opacity:0;
+}
+
+.showConfirmation{
+  opacity:1;
+}
+
+.hideConfirmation{
+  opacity:0;
+}
+
+#headerLinkContainer{
+  height:50%;
+  width:40%;
+  position:absolute;
+  bottom:0;
+  right:10%;
+  display:flex;
+}
+
+.headerLinks{
+  font-size:0.8em;
+  border:2px solid white;
+  border-bottom: 0px;
+  background:white;
+  color:#e2871b !important;
+  border-radius: 5px 5px 0 0;
+  margin-left: 10%;
+  padding-top: 10px;
+  padding-bottom:10px;
+  width:20%;
+  min-width:62px;
+  max-width: 126px;
+  text-align: center;
+  flex:1;
+  cursor: pointer;
+}
+
+.headerLinks:hover{
+  background: #e2871b;
+  color:white !important;
+  border:2px solid white;
+  border-bottom: 0px;
+  text-decoration:none;
+}
+
+/*header end */
+
+
+/* homepage start */
+
+#instructionsContainer{
+  overflow:auto;
+  margin-top: 40px;
+}
+
+.instructionBubble{
+  font-size:0.9em;
+  background:#e2871b;
+  float:left;
+  width:20vw;
+  height: 20vw;
+  border-radius:200px;
+  text-align:center;
+  margin-left: 4%;
+  padding-top: 5%;
+  color:white;
+}
+
+.instructionImg{
+  width:40%;
+  margin-top: 8px;
+}
+
+#intro{
+  text-align: center;
+  margin-top:20px;
+}
+
+#intro > a {
+  color:#0b10f7;
+  text-decoration: underline;
+  cursor:pointer;
+}
+/* homepage end */
+
+/* all books start */
+
+#allBooksWrapper{
+  overflow:auto;
+}
+
+.bookWrapper {
+    position: relative;
+    float: left;
+    width: 120px;
+    height: 200px;
+    margin:5px 0 5px 8%;
+    border:2px solid #A1B1BA;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+
+#bookTextBox, #searchedBookTextBox{
+  position:absolute;
+  min-width:10vw;
+  font-size: 0.8em;
+  word-wrap:break-word;
+  opacity:0;
+  border:5px solid #027CE8;
+  border-radius:5px;
+  background:white;
+  padding:0 5px 2px 5px;
+  z-index:1;
+   -webkit-transition: opacity 1s ease-in-out;
+   -moz-transition: opacity 1s ease-in-out;
+   transition: opacity 1s ease-in-out;
+}
+
+#bookTextBox > a {
+  text-decoration: underline;
+}
+
+.howToMessage{
+  text-align: center;
+  margin:5px 0;
+}
+
+#howToImgWrapper{
+  background:#e2871b;
+  border-radius: 50px;
+  cursor:pointer;
+  padding:1px 1px 3px 1px;
+  margin-left: 3px;
+}
+
+#howtoImg{
+  width:20px;
+}
+
+.opaque{
+  opacity:1;
+   -webkit-transition: opacity 2s ease-in-out;
+   -moz-transition: opacity 2s ease-in-out;
+   transition: opacity 2s ease-in-out;
+}
+
+.requestImgWrapper  {
+  float:right;
+  background:#e2871b;
+  border-radius: 50px;
+  margin:2px 2px 0 0;
+  cursor:pointer;
+ padding:1px 1px 0 1px;
+}
+
+.requestImgWrapper:hover {
+  background:#027CE8;
+}
+
+.requestImg{
+  width:20px;
+  margin-bottom: 3px;
+}
+
+.transparent{
+  opacity:0;
+   -webkit-transition: opacity 2s ease-in-out;
+   -moz-transition: opacity 2s ease-in-out;
+   transition: opacity 2s ease-in-out;
+}
+
+/*all books end */
+
+/*my profile start */
+
+#myProfileContainer{
+  overflow:auto;
+  margin-bottom: 5px;
+  position:relative;
+}
+
+#booksOwnedContainer, #bookRequestsContainer, #bookApprovalContainer, #tradeBooksContainer{
+  background:#A1B1BA;
+  float:left;
+  width:80%;
+  margin:0 0 5px 10%;
+  border-radius: 10px;
+}
+
+#bookRequestsContainer,#getFromOwnerWrapper{
+  overflow:auto;
+}
+
+.profileTitles{
+  color:white;
+  font-weight: 500;
+  text-align: center;
+  background: #7D8E99;
+  margin-bottom: 5px;
+}
+
+#tradeBooksContainer > :first-child {
+  font-weight: 500;
+  color:white;
+  text-align: center;
+}
+
+
+
+/*add details form start */
+
+#detailFormContainer{
+  position: absolute;
+      top: 20px;
+      width: 50%;
+      left: 25%;
+      background: white;
+      transition: 3s ease-in;
+      transition: 1s ease-out;
+      border: 6px solid #e2871b;
+}
+
+#detailFormContainer > :first-child {
+  font-size: 0.9em;
+  margin:5px 0 0 5px;
+  font-weight: 500;
+}
+
+#detailsForm{
+  padding-top:20px;
+}
+
+.hideForm{
+  opacity:0;
+  display: none;
+  z-index:1;
+}
+
+.showForm{
+  opacity: 1;
+  z-index:1;
+}
+
+
+.fieldWrapper > label{
+   display: inline-block;
+   float: left;
+   clear: left;
+   width: 30%;
+   text-align: right;
+   font-size: 0.9em;
+}
+
+.fieldWrapper > input{
+  display: inline-block;
+  float: left;
+     font-size: 0.8em;
+}
+
+.detailsErrorMessage{
+  height:28px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+#submitDetailsButton{
+  float:right;
+  clear:left;
+  margin:0 8px 8px 0;
+}
+#bookApprovalContainer{
+  clear:left;
+  overflow:auto;
+}
+
+#booksOwnedContainer{
+  overflow:auto;
+  background:#A1B1BA;
+    margin:10px 0 5px 10%;
+}
+
+.detailsInput{
+  border: 2px solid #A1B1BA;
+  width:50%;
+}
+
+.errorFormMessage{
+  color:red;
+ font-size:0.7em;
+}
+
+/* add details form end */
+
+/*search form start */
+#searchForm{
+text-align:center;
+margin-top: 15px;
+overflow: auto;
+}
+
+#queryInput{
+  width:60%;
+  border:2px solid #A1B1BA;
+}
+
+#submitAddBookButton, #submitDetailsButton, #submitProfileDetailsButton{
+  background: #A1B1BA;
+  color:white;
+  margin-left: 5px;
+  padding:2px;
+  box-shadow:2px 2px #ffc452;
+  cursor:pointer;
+}
+
+#submitDetailsButton:hover{
+  box-shadow:4px 4px #ffc452;
+  color:#ffc452;
+}
+
+#submitProfileDetailsButton:hover{
+  box-shadow:4px 4px #ffc452;
+  color:#ffc452;
+}
+
+#submitAddBookButton:hover{
+  box-shadow:4px 4px #ffc452;
+  color:#ffc452;
+}
+
+
+
+#queryError{
+  margin: 5px 0 0 10%;;
+  float:left;
+  width:80%;
+  background:#0275d8;
+  color:white;
+  transition: all 1s ease;
+}
+
+.errorShow{
+  opacity:1;
+}
+
+.errorHide{
+  opacity: 0;
+}
+/*search form end */
+
+/*searched books start */
+.plusButton {
+  float:right;
+  background:#e2871b;
+  margin:2px 2px 0 0;
+  cursor:pointer;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 0.8em;
+  padding:0 2px 0 2px;
+  color:white;
+}
+
+.plusButton:hover{
+  color:#666;
+}
+
+#howToPlusButton{
+vertical-align: bottom;
+background: #e2871b;
+margin: 2px 2px 0 5px;
+cursor: pointer;
+font-weight: bold;
+font-size: 2em;
+height: 22px;
+width: 22px;
+line-height: 22px;
+display: inline-block;
+color: white;
+}
+
+#searchedBooksWrapper{
+  overflow: auto;
+}
+
+#addBookMessage{
+  margin: 0 0 0 10%;
+  float:left;
+  width:80%;
+  background:#0275d8;
+  color:white;
+  transition: all 1s ease;
+}
+
+.showAddBookMessage{
+  opacity:1;
+}
+
+.hideAddBookMessage{
+  opacity:0;
+}
+
+/*searched books end */
+
+/*
+light blueb #3A96E8
+dark blueb #027CE8
+blueb #35A0FF
+*/
+
+.bookRequestTags, .myBookTags{
+  float:left;
+  color:white;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  padding:4px;
+}
+
+.bookRequestTags{
+  background:#3A96E8;
+}
+
+.myBookTags{
+  background:#027CE8;
+}
+
+
+/*delete tag button */
+.bookRequestTags > :nth-child(1) {
+    float: right;
+    margin-right: 2%;
+    font-size: 0.6em;
+    width: 46px;
+    cursor: pointer;
+    background: white;
+    color:black;
+    border: 3px solid #29C629;
+    text-align: center;
+    clear:both;
+}
+
+.bookRequestTags > :nth-child(1):hover {
+      border: 3px solid #35FC35;
+
+}
+
+.bookRequestTags > :nth-child(2) {
+  text-align: center;
+  clear:right;
+}
+
+.bookRequestTags > :nth-child(3) {
+  text-align: center;
+  font-size: 0.7em;
+}
+
+.myBookTags > :nth-child(1) {
+  float: right;
+  margin-right: 2%;
+  font-size: 0.6em;
+  width: 46px;
+  cursor: pointer;
+  background: white;
+  color:black;
+  border: 3px solid #29C629;
+  text-align: center;
+  clear:both;
+}
+
+.myBookTags > :nth-child(1):hover {
+      border: 3px solid #35FC35;
+}
+
+.myBookTags > :nth-child(2) {
+  text-align: center;
+  clear:right;
+}
+
+.myBookTags > :nth-child(3) {
+  text-align: center;
+  font-size: 0.7em;
+}
+
+.bookApprovalTags{
+  float:left;
+  background:#3A96E8;
+  color:white;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  padding:4px;
+  width:30%;
+}
+
+.bookApprovalTags > :nth-child(1) {
+  text-align: center;
+}
+
+.bookApprovalTags > :nth-child(2) {
+  text-align: center;
+  font-size: 0.7em;
+}
+
+.bookApprovalTags > :nth-child(3){
+  text-align:center;
+}
+
+.approveImg{
+  float:left;
+  margin-left: 3%;
+  width:45%;
+  min-width: 44px;
+  cursor: pointer;
+  font-size: 0.7em;
+  background:white;
+  color:black;
+  border:3px solid #e91313;
+}
+
+.approveImg:hover{
+  border:3px solid #FF8989;
+}
+
+.notApproveImg{
+  float:left;
+  margin-left: 3%;
+  font-size: 0.7em;
+  width:45%;
+  min-width: 44px;
+  cursor: pointer;
+  background:white;
+ color:black;
+  border:3px solid #29C629;
+}
+
+.notApproveImg:hover{
+  border: 3px solid #35FC35;
+}
+
+/*books given away start */
+
+#tradeBooksContainer{
+  clear:both;
+}
+
+#giveToRequesterWrapper,#giveToRequesterWrapper{
+  overflow:auto;
+}
+
+.booksGivenAwayTags{
+  width:20%;
+  border:3px solid #e2871b;
+  float: left;
+  color:#61618d;
+  background: #f7f7f7;
+  font-size: 0.8em;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  padding: 4px;
+  width: 30%;
+}
+
+.deleteBooksGivenButton{
+  text-align: center;
+  float:left;
+  margin-left: 25%;
+  font-size: 0.7em;
+  width:50%;
+  min-width: 44px;
+  cursor: pointer;
+  background:white;
+  color:black;
+  border:3px solid #29C629;
+}
+
+.deleteBooksGivenButton:hover{
+  border: 3px solid #35FC35;
+}
+/*books given away end */
+
+
+/*my profile end */
+
+/* footer start */
+
+.page-wrap {
+  min-height: 100%;
+  height: auto !important;
+  /* equal to footer height */
+  margin-bottom: -50px;
+
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.footer, .page-wrap:after {
+  height: 50px;/*remember to change page-wrap margin bottom to same*/
+}
+.footer {
+  position:relative;
+  background:#e2871b;
+}
+
+.footer > span{
+  font-size: 0.6em;
+  position:absolute;
+  bottom: 0;
+  left:45%;
+  color:#0275d8;
+}
+
+.followMeWrapper{
+  float:left;
+  font-size: 0.6em;
+  margin: 3px 0 0 3px;
+}
+
+.followMeWrapper > h3{
+  font-size: 1em;
+}
+/* footer end */

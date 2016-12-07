@@ -1,0 +1,17 @@
+export const AUTH_USER = 'auth_user';
+export const LOCK = 'lock';
+export const ALL_BOOKS = 'all_books';
+export const TEXTBOX_OPACITY = 'textbox_opacity';
+export const TEXTBOX_DATA = 'textbox_data';
+export const BOOK_TRADE_REQUESTS = 'book_trade_requests';
+export const BOOKS_AWAITING_MY_APPROVAL = 'books_awaiting_my_approval';
+export const CONFIRMATION_OPACITY = 'confirmation_opacity';
+export const MY_BOOKS = 'my_books';
+export const BOOKS_SEARCHED = 'books_searched';
+export const ERROR_OPACITY = 'error_opacity';
+export const ADD_BOOK_MESSAGE = 'add_book_message';
+export const DETAILS_FORM_OPACITY = 'details_form_opacity';
+export const SIGNED_UP_USER = 'signed_up_user';
+export const SIGNED_UP_MESSAGE_OPACITY = 'signed_up_message_opacity';
+export const BOOKS_I_GOT = 'books_i_got';
+export const BOOKS_GIVEN_AWAY = 'books_given_away';
