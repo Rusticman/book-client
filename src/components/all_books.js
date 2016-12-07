@@ -39,7 +39,7 @@ const elementData = allBooks[index];
       top:e.clientY,
       opacity:0
     }
-    props.textBoxStyle(styleObj);//changes location
+    props.textBoxStyle(styleObj);
   }
 
   const addBookToProfile = (e) => {
