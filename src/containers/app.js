@@ -11,7 +11,7 @@ import Footer from '../components/footer';
     const options = {
       allowedConnections: ['twitter', 'facebook'],
       auth: {
-         redirectUrl: 'https://book-trade-server.herokuapp.com/allbooks',
+         redirectUrl: 'https://book-trade-rustic.herokuapp.com/allbooks',
          responseType: 'token'
     }
     }
