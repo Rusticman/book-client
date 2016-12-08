@@ -352,6 +352,14 @@ export function locationAndEmailDetails(location, email){
              type:DETAILS_FORM_OPACITY,
              payload:'hideForm'
            })
+           dispatch({
+             type:SIGNED_UP_MESSAGE_OPACITY,
+             payload:'hideSignedUpMessage'
+           })
+           dispatch({
+             type:SIGNED_UP_USER,
+             payload:true
+           })
          }
        })
        .catch(err => {

@@ -27,7 +27,7 @@ const bookTradeRequestList = bookTradeRequests.map((elem,i) => {
 
 return(
   <div id="bookRequestsContainer">
-    <div className="profileTitles">book trade requests awaiting owner approval:</div>
+    <div className="profileTitles">Book trade requests awaiting owner approval:</div>
  {bookTradeRequestList}
   </div>
 )

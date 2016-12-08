@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
-export default class Homepage extends Component {
+ class Homepage extends Component {
 
 showLock(){
   this.props.lock.show();
 }
 
 showMessage(){
-  const {auth} = this.props;
-  if(auth){
-    <div id="intro"> </div>
+  const {authenticated} = this.props;
+  if(authenticated){
+  return  <div id="intro"> </div>
   }
   else{
-    <div id="intro">To use this service, you need to <a onClick={this.showLock.bind(this)}>login.</a></div>
+  return  <div id="intro">To use this service, you need to <a onClick={this.showLock.bind(this)}>login.</a></div>
   }
 }
 
@@ -20,6 +21,7 @@ showMessage(){
   render() {
     return (
       <div id="homepage">
+      <h1>book trade forum</h1>
         <div id="instructionsContainer">
           <div className="instructionBubble">
             1. request book<br/>
@@ -46,3 +48,11 @@ showMessage(){
     );
   }
 }
+
+function mapStateToProps(state){
+  return{
+    authenticated:state.auth.authenticated
+  }
+}
+
+export default connect(mapStateToProps)(Homepage)

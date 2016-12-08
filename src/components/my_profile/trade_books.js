@@ -35,7 +35,7 @@ const receiveFromOwnerList = booksIGot.map((elem, i) => {
   return(
     <div key={i+ "booksToGive"} className="booksGivenAwayTags">
       <b>Book</b>:{elem.title}<br/>
-      <b>Requester:</b>{elem.requesterName}<br/>
+      <b>Owner:</b>{elem.ownerName}<br/>
       <b>Email address:</b>{elem.requesterEmail}<br/>
       <b>Location:</b>{elem.requesterLocation}<br/>
       <div onClick={deleteGotTag} className={i+" deleteBooksGivenButton"}>delete</div>

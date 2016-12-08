@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import * as actions from '../actions';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import config from '../../config';
 
 
  class App extends Component {
@@ -12,12 +11,12 @@ import config from '../../config';
     const options = {
       allowedConnections: ['twitter', 'facebook'],
       auth: {
-         redirectUrl: 'https://book-trade-rustic.herokuapp.com/allbooks',
+         redirectUrl: 'https://book-trade-server.herokuapp.com/allbooks',
          responseType: 'token'
     }
     }
 
-  
+
 
     const lock = new Auth0Lock(
       process.env.AUTH0_ID,
