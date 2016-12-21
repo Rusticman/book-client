@@ -22,12 +22,15 @@ componentWillMount(){
     return (
       <div id="myProfileContainer">
           <FurtherDetailsForm detailsFormOpacity={this.props.detailsFormOpacity}
-                              locationAndEmailDetails={this.props.locationAndEmailDetails}/>
+                              detailsFormSlider={this.props.detailsFormSlider}
+                              locationAndEmailDetails={this.props.locationAndEmailDetails}
+                              formMessage={this.props.formMessage}
+                              showFormMessage={this.props.showFormMessage}/>
           <SearchForm bookQuery={this.props.bookQuery}
                       errorOpacity={this.props.errorOpacity}
                       showError={this.props.showError}
                       addBookMessage={this.props.addBookMessage}
-                      addDetailsToMyProfile={this.props.addDetailsToMyProfile}/>
+                      detailsFormSlider={this.props.detailsFormSlider}/>
           <BooksSearched booksSearched={this.props.booksSearched}
                          textboxOpacity={this.props.textboxOpacity}
                          textboxData={this.props.textboxData}
@@ -64,7 +67,8 @@ function mapStateToProps(state){
     addBookMessage:state.style.addBookMessage,
     detailsFormOpacity:state.style.detailsFormOpacity,
     booksGivenAway:state.data.booksGivenAway,
-    booksIGot:state.data.booksIGot
+    booksIGot:state.data.booksIGot,
+    formMessage:state.style.formMessage
   }
 }
 

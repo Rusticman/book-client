@@ -17,7 +17,9 @@ import {
   DETAILS_FORM_OPACITY,
   SIGNED_UP_MESSAGE_OPACITY,
   BOOKS_I_GOT,
-  BOOKS_GIVEN_AWAY
+  BOOKS_GIVEN_AWAY,
+  LOADED,
+  FORM_MESSAGE
 } from './types';
 
 const ROOT_URL = 'https://book-trade-server.herokuapp.com'
@@ -87,6 +89,10 @@ export function getAllBooks(){
     axios.get(`${ROOT_URL}/all/books`)
     .then(response => {
       if(response.data.success){
+        dispatch({
+          type:LOADED,
+          payload:true
+        })
         return dispatch({type:ALL_BOOKS,
                          payload:response.data.allBooks})
       }
@@ -318,7 +324,7 @@ export function addBookToMyCollection(book){
           if(response.data.locationRequired){
             return dispatch({
                type:DETAILS_FORM_OPACITY,//this is to show the form for location & email details
-               payload:'showForm'
+               payload:'0px'
              })
           }
           else{
@@ -348,10 +354,6 @@ export function locationAndEmailDetails(location, email){
        headers: { authorization: sessionStorage.getItem('token') }})
        .then(response => {
          if(response.data.success){
-           dispatch({
-             type:DETAILS_FORM_OPACITY,
-             payload:'hideForm'
-           })
            dispatch({
              type:SIGNED_UP_MESSAGE_OPACITY,
              payload:'hideSignedUpMessage'
@@ -414,9 +416,34 @@ export function deleteApprovedBooks(boolean, index){
   }
 }
 
-export function addDetailsToMyProfile(){
-  return {
-     type:DETAILS_FORM_OPACITY,//this is to show the form for location & email details
-     payload:'showForm'
-   }
+export function detailsFormSlider(boolean){
+  if(boolean){
+    return {
+      type:DETAILS_FORM_OPACITY,//this is to show the form for location & email details
+      payload:'0px'
+    }
+  }
+  else{
+    return{
+      type:DETAILS_FORM_OPACITY,
+      payload:'-300px'
+    }
+  }
+}
+
+
+export function showFormMessage(boolean){
+
+  if(boolean){
+    return{
+      type:FORM_MESSAGE,
+      payload:1
+    }
+  }
+  else{
+    return{
+      type:FORM_MESSAGE,
+      payload:0
+    }
+  }
 }

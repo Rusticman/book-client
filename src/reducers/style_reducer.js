@@ -4,7 +4,9 @@ import {
   ERROR_OPACITY,
   ADD_BOOK_MESSAGE,
   DETAILS_FORM_OPACITY,
-  SIGNED_UP_MESSAGE_OPACITY
+  SIGNED_UP_MESSAGE_OPACITY,
+  LOADED,
+  FORM_MESSAGE
 }from '../actions/types';
 
 const INITIAL_STATE = {
@@ -12,8 +14,10 @@ const INITIAL_STATE = {
   confirmationOpacity:'hideConfirmation',
   errorOpacity:'errorHide',
   addBookMessage:'hideAddBookMessage',
-  detailsFormOpacity:'hideForm',
-  signedUpMessageOpacity:'showSignedUpMessage'
+  detailsFormOpacity:'-300px',
+  signedUpMessageOpacity:'showSignedUpMessage',
+  loaded:false,
+  formMessage:0
 }
 export default function(state = INITIAL_STATE,action){
   switch(action.type){
@@ -28,7 +32,11 @@ export default function(state = INITIAL_STATE,action){
     case DETAILS_FORM_OPACITY:
       return {...state, detailsFormOpacity:action.payload}
     case SIGNED_UP_MESSAGE_OPACITY:
-      return {...state, signedUpMessageOpacity:action.payload}  
+      return {...state, signedUpMessageOpacity:action.payload}
+    case LOADED:
+      return {...state, loaded:action.payload}
+    case FORM_MESSAGE:
+      return {...state, formMessage:action.payload}
   }
 
   return state;

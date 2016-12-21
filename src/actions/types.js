@@ -15,3 +15,5 @@ export const SIGNED_UP_USER = 'signed_up_user';
 export const SIGNED_UP_MESSAGE_OPACITY = 'signed_up_message_opacity';
 export const BOOKS_I_GOT = 'books_i_got';
 export const BOOKS_GIVEN_AWAY = 'books_given_away';
+export const LOADED = 'loaded';
+export const FORM_MESSAGE = 'form_message';

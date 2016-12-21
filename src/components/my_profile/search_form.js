@@ -10,7 +10,7 @@ class SearchForm extends Component{
 
   handleDetailsProfileSubmit(e){
     e.preventDefault();
-    this.props.addDetailsToMyProfile();
+    this.props.detailsFormSlider(true);
   }
 
   render(){

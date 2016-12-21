@@ -5,14 +5,8 @@ import AllBooks from '../components/all_books';
 
  class AllBooksContainer extends Component {
 
-componentWillMount(){
-  this.props.getAllBooks();
-}
-
 
   render() {
-
-
 
     return (
       <div id="allBooksContainer">

@@ -16,7 +16,7 @@ const {auth} = this.props;
   return  [<Link key={"link1"}  className="headerLinks" to="/">homepage</Link>,
     <Link key={"link2"}  className="headerLinks" to="/allbooks">all books </Link>,
     <Link key={"link3"} className="headerLinks" to="/profile">my profile </Link>,
-    <Link key={"link4"} className="headerLinks" to="/signout">signout</Link>]
+    <Link key={"link4"} className="headerLinks" to="/signout">logout</Link>]
   }
   else{
     return [<Link key={"link7"}  className="headerLinks" to="/">homepage</Link>,

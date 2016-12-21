@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
 import Header from '../components/header';
+import Loader from 'react-loader';
 import Footer from '../components/footer';
-
 
  class App extends Component {
   componentWillMount(){
+  this.props.getAllBooks();
 
     const options = {
       allowedConnections: ['twitter', 'facebook'],
       auth: {
-         redirectUrl: 'https://book-trade-rustic.herokuapp.com/allbooks',
+         redirectUrl: 'https://book-trade-server.herokuapp.com/allbooks',
          responseType: 'token'
     }
     }
@@ -19,8 +20,8 @@ import Footer from '../components/footer';
 
 
     const lock = new Auth0Lock(
-      process.env.AUTH0_ID,
-      process.env.AUTH0_DOMAIN,
+    process.env.AUTH0_ID,
+    process.env.AUTH0_DOMAIN,
       options
     );
     this.lock = lock;
@@ -44,8 +45,36 @@ this.props.authLock(this.lock);
   render() {
     const childrenWithProps = React.cloneElement(this.props.children, this.props);
 
+    const {loaded} = this.props;
+
+      const loaderOptions = {
+          lines: 13,
+          length: 20,
+          width: 10,
+          radius: 30,
+          scale: 1.00,
+          corners: 1,
+          color: '#e2871b',
+          opacity: 0.25,
+          rotate: 0,
+          direction: 1,
+          speed: 1,
+          trail: 60,
+          fps: 20,
+          zIndex: 2e9,
+          top: '50%',
+          left: '50%',
+          shadow: false,
+          hwaccel: false,
+          position: 'absolute'
+      };
+
+
+
     return (
       <div id="app">
+      <Loader loaded={loaded} options={loaderOptions} id="loader">
+      </Loader>
        <div className="page-wrap">
         <Header lock={this.lock}
                 auth={this.props.auth}
@@ -69,7 +98,8 @@ function mapStateToProps(state){
     lock:state.auth.lock,
     signedUp:state.auth.signedUp,
     signedUpMessageOpacity:state.style.signedUpMessageOpacity,
-    confirmationOpacity:state.style.confirmationOpacity
+    confirmationOpacity:state.style.confirmationOpacity,
+    loaded:state.style.loaded
   }
 }
 
