@@ -426,7 +426,7 @@ export function detailsFormSlider(boolean){
   else{
     return{
       type:DETAILS_FORM_OPACITY,
-      payload:'-300px'
+      payload:'-450px'
     }
   }
 }

@@ -14,7 +14,7 @@ const INITIAL_STATE = {
   confirmationOpacity:'hideConfirmation',
   errorOpacity:'errorHide',
   addBookMessage:'hideAddBookMessage',
-  detailsFormOpacity:'-300px',
+  detailsFormOpacity:'-450px',
   signedUpMessageOpacity:'showSignedUpMessage',
   loaded:false,
   formMessage:0
